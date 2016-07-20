@@ -1,0 +1,16 @@
+{
+    "name": "acquia/buildstepstutorial",
+    "description": "secret tutorial directory",
+    "minimum-stability": "dev",
+    "version": "master",
+    "authors": [
+        {
+            "name": "kieranacquia",
+            "email": "kieran@acquia.com"
+        }
+    ],
+    "dist": {
+        "url": "git@github.com:acquia/buildstepstutorial.git",
+        "type": "git"
+    }
+}
