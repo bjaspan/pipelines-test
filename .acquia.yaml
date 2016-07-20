@@ -4,7 +4,7 @@ build-steps:
       type: script
       script:
         # Run composer install to get access the private acquia buildstepstutorial repository with the encrypted secret
-        - composer --no-interaction --quiet install
+        - composer install
         # Use openssl with the encrypted password provided to print the secret to the lmsseccret.txt
         - openssl aes-256-cbc -debug -d -a -pass $PASSWORD -in vendor/acquia/buildstepstutorial/secret.enc -out lmssecret.txt
 # The pipelines team is providing you with the encrypted password that can only be decrypted on the pipelines container using the pipelines service keys.
