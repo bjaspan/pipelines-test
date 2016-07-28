@@ -2,5 +2,5 @@ build-steps:
   - test:
       script:
         - set -x
-        - sleep 3600
+        - sleep 3600 &
         - jobs
