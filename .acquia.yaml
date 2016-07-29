@@ -1,5 +1,5 @@
 build-steps:
   - test:
       script:
-#        - sleep 300 &
+        - set -x
         - /bin/false
