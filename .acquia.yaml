@@ -1,9 +1,5 @@
 build-steps:
   - test:
       script:
-        - echo starting sleep
         - sleep 300 &
-        - echo running jobs
-        - jobs
-        - echo done
         - /bin/false
