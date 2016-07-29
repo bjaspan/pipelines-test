@@ -3,3 +3,4 @@ build-steps:
       script:
         - set -x
         - /bin/false
+        - /bin/true
