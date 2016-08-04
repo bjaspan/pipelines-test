@@ -1,4 +1,4 @@
 build-steps:
   - noop:
       script:
-        - /bin/false
+        - composer install
