@@ -3,7 +3,7 @@ build-steps:
     - script:
         - composer install
         - echo 'The secret from the private repo is:'
-        - echo vendor/acquia/pipelinestutorial/secret.txt
+        - cat vendor/acquia/pipelinestutorial/secret.txt
 
 ssh-keys:
   github:
