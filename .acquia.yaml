@@ -3,14 +3,14 @@ build-steps:
       type: script
       script:
         # Need to quiet composer so that the logs aren't 6 million chars
-        - composer install --no-interaction 
+        - composer install --no-interaction
         # Sudo used to start database as root. Only command that can use Sudo in container.
         - sudo /etc/init.d/mysql start
         # Create database for new Drupal install. Settings.php can't have creds in it, otherwise Drupal throws AlreadyInstalledException
         - mysql -u root -proot -e "CREATE DATABASE drupal"
         # Move to the docroot to run drush
         - cd docroot
-        # Use drush to install the default profile. Change if you want different drush arguments. Mysql must be on 127.0.0.1, localhost doesn't seem to work. Pass in newly created database called drupal 
+        # Use drush to install the default profile. Change if you want different drush arguments. Mysql must be on 127.0.0.1, localhost doesn't seem to work. Pass in newly created database called drupal
         - ../vendor/bin/drush site-install -y --db-url=mysql://root:root@127.0.0.1:3306/drupal
         # Use php webserver as this is known to work in the container. Wait 2 seconds for PHP server to get set-up.
         - php -S 127.0.0.1:8081 &
@@ -18,5 +18,3 @@ build-steps:
         # Move out of the docroot so behat doesn't lose it's way. Will run behat with default settings using behat.yml and then terminate when the feature files are done.
         - cd ..
         - ./vendor/bin/behat
-        # Clean up the first backgrounded process which the PHP webserver started above.
-        - kill %1
