@@ -1,0 +1,11 @@
+{
+    "require": {
+        "acquia/pipelinestutorial": "dev-pipelines301"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:acquia/pipelinestutorial.git"
+        }
+    ]
+}
