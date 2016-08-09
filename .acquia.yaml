@@ -1,0 +1,6 @@
+build-steps:
+  -
+    pipeline:
+      type: script
+      script:
+        - 'composer install'
