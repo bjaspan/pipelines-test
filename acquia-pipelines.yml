@@ -3,5 +3,6 @@ events:
   build:
     steps:
       - composer:
+          type: script
           script:
             - composer install
