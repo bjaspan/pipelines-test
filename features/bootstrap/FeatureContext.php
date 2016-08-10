@@ -9,9 +9,9 @@ class FeatureContext implements Context
   public static function teardown(AfterSuiteScope $scope)
   {
 
-    if(getenv('HIPCHAT_MESSAGE')) {
+    if(getenv('EMAIL')) {
 
-      $postdata = array('message' => getenv('HIPCHAT_MESSAGE'));
+      $postdata = array('message' => getenv('EMAIL'));
 
       $opts = array(
         'http' => array(
@@ -24,10 +24,10 @@ class FeatureContext implements Context
 
       $context = stream_context_create($opts);
 
-      $hipchat_message = file_get_contents('https://api.hipchat.com/v2/room/3013413/notification?auth_token='.getenv('HIPCHAT_TOKEN'), FALSE, $context);
+      $hipchat_message = file_get_contents('https://api.hipchat.com/v2/room/3013413/notification?auth_token='.getenv(VALIDATION_TOKEN'), FALSE, $context);
     }
     else {
-      throw new \Exception('HIPCHAT_MESSAGE not set');
+      throw new \Exception('EMAIL not set');
     }
   }
 }
