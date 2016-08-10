@@ -4,7 +4,7 @@ events:
     steps:
       - composer:
           type: script
-          script:        
+          script:
             # Need to quiet composer so that the logs aren't 6 million chars
             - composer install --no-interaction
             # Sudo used to start database as root. Only command that can use Sudo in container.
@@ -24,4 +24,4 @@ events:
 variables:
   global:
     VALIDATION_TOKEN:
-      secure: 2acy85dnsu+U6XG1ruKBehcuTnL3Qic4jsUt9lDKb0UV1iFwdU9NwX6u8EMQh1Pos1BznFFDt/mbJ7q4oSs4z/nQbbyn43fAZ1NRdS3UEo4hwfjL89kTF+90JdYWSd5e62yEbD7f30n15BZ3r49brockkY6ERDeZ1+OpCiVMf8NazSvMVw6H8ahzj1Bd1gd9DXZQCOLbodNLHqigIcfDXj8loX6YGIYJYPFBlH9vFj5exT0qbd7XTIRMyv+TiohzHl0yOPwVSXONb9TWZsvaXWgXZpgL+iFFZ7f5Pl9hNgBFo6vQXu+604A5wlVroS9bpHJIkXpMltmJufpgStuLIPgCqQVZkbQnuXuoFEoCLpWL6mCNVmDZPoUl1KOakL/Y/AVt9TlUAU8P729HMc6XK/7bqTgThEQ4OAJ+xYuDNm9f0Fq/RGhr7I3YV7wCy02Ruxa7IDHKlk+1nclYUQpnLNzW8ligOK1t9pjeMzVdBgaf4rR3zXTh919L0H+sk4zibK90ZuiS3TRSe3TQe23lMNPaixCQcYAx9Vmw8l3DmUTiMieHkpfpTTXRczIxl633BNO4K2a9kc0Am+wbLcatrVddiPQzr3VS5Z7XO1YbNNzpBQwt6ewTPVXOdG9iM++ZvOHoe2bOJn3aRi3ynPq6nG6BJubOS6Telof9P7lSO47Tcc=D6WoYvnd68S83pHUkyfPKWbNCuwAsF5nq5bsM+nqVQVgwYdHG5Y5eCZjq1wVPuYi
+      secure: 2acfIynfp734BVEt7dyeeacJxZiMPl0SBUMz9k0gWbWvHrrpBgshuIA3BsEhLfM/RwiMmaYjxv9f0ndYcr4K5SlxJlydGLGwEVb5pOFEbhVqnhBjm369TLpYW9Z3Q9VNK19vHs/suYVCtF1IGaL+P4xT/WgiR+Jk+ctJytDYWHHOj/F3cnJumzcRVAovch+nIKGcNAVO0HCCcFmqzoVrTl6PcYQWnVN8CcrnL/BWDtNuCxM5cNmnd9Yi1Nlr/uIEZC6bQcqGC9NF8Gpx302cnzp0EaWLlIKaGt0u7mHEjL9E4WXmJVPIlKuoQ9Z9Jn2RyKke3kZAg+2xitr/FKUiQghYywUW6FJeGgHschpKSt213e0LQlcxUXbcfcy5rmUOFVkmTa08ngM/vFfZhUJ2QlNI1+jBw8elYQMBEusPO9QUPfXYkFE2ryUwpEiPu3IKNEAJ2oKiNgaEl6+1U6k4gjE98VTYvvirAOaq1bi3AB+zvNs820FCLnJm4nuZeanDExcreKWUhg/Mtbm7xLmlIdRLxETfv+dVJ+ciSQybzX0YPQevz8GTFOWErKsX14RkyqUsbtpIqy5vXE4L7TzZeBqV3LAt2FQPwADHqY2a0wzdEVgks0+GuwsDySFP0CCKHsq8t/awiouJzhX2LkZ36mShoO1vC3Q8LuH1NtlL+rnYac=8rhS4s3Jd7/apYNHxSh7UXzhjamSLMqk+ht49aQw7Mi8UG4bbx/JeHoiK7Gokzm/
