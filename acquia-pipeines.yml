@@ -1,0 +1,6 @@
+events:
+  build:
+    steps:
+      - composer:
+          script:
+            - composer install
