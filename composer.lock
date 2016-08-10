@@ -1,0 +1,42 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "f3cd777fce97d01b5c6ce622af8cef30",
+    "content-hash": "181b906fcdff358d68c9bad473ff899c",
+    "packages": [
+        {
+            "name": "my_company/my_module",
+            "version": "dev-private-pipelines301",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:acquia/pipelinestutorial.git",
+                "reference": "720bc38d61cb87e19eeadafb2034364dd938e81b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/acquia/pipelinestutorial/zipball/720bc38d61cb87e19eeadafb2034364dd938e81b",
+                "reference": "720bc38d61cb87e19eeadafb2034364dd938e81b",
+                "shasum": ""
+            },
+            "type": "drupal-module",
+            "description": "My Private Custom Module",
+            "keywords": [
+                "Drupal"
+            ],
+            "time": "2016-08-10 16:29:15"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "my_company/my_module": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

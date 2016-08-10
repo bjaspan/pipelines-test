@@ -1,0 +1,8 @@
+{
+  "name": "my_company/my_module",
+  "type": "drupal-module",
+  "description": "My Private Custom Module",
+  "keywords": ["Drupal"],
+  "minimum-stability": "dev",
+  "require": { }
+}

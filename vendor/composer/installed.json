@@ -1,0 +1,25 @@
+[
+    {
+        "name": "my_company/my_module",
+        "version": "dev-private-pipelines301",
+        "version_normalized": "dev-private-pipelines301",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:acquia/pipelinestutorial.git",
+            "reference": "720bc38d61cb87e19eeadafb2034364dd938e81b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/acquia/pipelinestutorial/zipball/720bc38d61cb87e19eeadafb2034364dd938e81b",
+            "reference": "720bc38d61cb87e19eeadafb2034364dd938e81b",
+            "shasum": ""
+        },
+        "time": "2016-08-10 16:29:15",
+        "type": "drupal-module",
+        "installation-source": "source",
+        "description": "My Private Custom Module",
+        "keywords": [
+            "Drupal"
+        ]
+    }
+]
