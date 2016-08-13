@@ -5,6 +5,7 @@ events:
       - composer:
           type: script
           script:
+            - set -x
             # Need to quiet composer so that the logs aren't 6 million chars
             - composer install --no-interaction
             # Sudo used to start database as root. Only command that can use Sudo in container.
