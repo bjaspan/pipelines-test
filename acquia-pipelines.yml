@@ -2,29 +2,24 @@ version: 1.0.0
 events:
   build:
     steps:
-      - composer:
+      -
+        composer:
           type: script
           script:
-            - set -x
-            # Need to quiet composer so that the logs aren't 6 million chars
-            - composer install --no-interaction
-            # Sudo used to start database as root. Only command that can use Sudo in container.
-            - sudo /etc/init.d/mysql start
-            # Create database for new Drupal install. Settings.php can't have creds in it, otherwise Drupal throws AlreadyInstalledException
-            - mysql -u root -proot -e "CREATE DATABASE drupal"
-            # Move to the docroot to run drush
-            - cd docroot
-            # Use drush to install the default profile. Change if you want different drush arguments. Mysql must be on 127.0.0.1. Silencing a drush si mail issue. Pass in newly created database called drupal
-            - /usr/bin/env PHP_OPTIONS="-d sendmail_path=`which true`" ../vendor/bin/drush site-install -y --db-url=mysql://root:root@127.0.0.1:3306/drupal
-            # Use php webserver as this is known to work in the container. Wait 2 seconds for PHP server to get set-up.
-            - php -S 127.0.0.1:8081 &
-            - sleep 2
-            # Move out of the docroot so behat doesn't lose it's way. Will run behat with default settings using behat.yml and then terminate when the feature files are done.
-            - cd ..
+            - 'set -x'
+            - 'composer install --no-interaction'
+            - 'sudo /etc/init.d/mysql start'
+            - 'mysql -u root -proot -e "CREATE DATABASE drupal"'
+            - 'cd docroot'
+            - '/usr/bin/env PHP_OPTIONS="-d sendmail_path=`which true`" ../vendor/bin/drush site-install -y --db-url=mysql://root:root@127.0.0.1:3306/drupal'
+            - 'php -S 127.0.0.1:8081 &'
+            - 'sleep 2'
+            - 'cd ..'
             - ./vendor/bin/behat
-            - echo behat passed
-
+            - 'echo behat passed'
 variables:
   global:
     VALIDATION_TOKEN:
       secure: 2acfIynfp734BVEt7dyeeacJxZiMPl0SBUMz9k0gWbWvHrrpBgshuIA3BsEhLfM/RwiMmaYjxv9f0ndYcr4K5SlxJlydGLGwEVb5pOFEbhVqnhBjm369TLpYW9Z3Q9VNK19vHs/suYVCtF1IGaL+P4xT/WgiR+Jk+ctJytDYWHHOj/F3cnJumzcRVAovch+nIKGcNAVO0HCCcFmqzoVrTl6PcYQWnVN8CcrnL/BWDtNuCxM5cNmnd9Yi1Nlr/uIEZC6bQcqGC9NF8Gpx302cnzp0EaWLlIKaGt0u7mHEjL9E4WXmJVPIlKuoQ9Z9Jn2RyKke3kZAg+2xitr/FKUiQghYywUW6FJeGgHschpKSt213e0LQlcxUXbcfcy5rmUOFVkmTa08ngM/vFfZhUJ2QlNI1+jBw8elYQMBEusPO9QUPfXYkFE2ryUwpEiPu3IKNEAJ2oKiNgaEl6+1U6k4gjE98VTYvvirAOaq1bi3AB+zvNs820FCLnJm4nuZeanDExcreKWUhg/Mtbm7xLmlIdRLxETfv+dVJ+ciSQybzX0YPQevz8GTFOWErKsX14RkyqUsbtpIqy5vXE4L7TzZeBqV3LAt2FQPwADHqY2a0wzdEVgks0+GuwsDySFP0CCKHsq8t/awiouJzhX2LkZ36mShoO1vC3Q8LuH1NtlL+rnYac=8rhS4s3Jd7/apYNHxSh7UXzhjamSLMqk+ht49aQw7Mi8UG4bbx/JeHoiK7Gokzm/
+    EMAIL:
+      secure: 2aco2dhMLMZaoGbn+owEryx/R2eRrdiYkjyyk/2T6d74sfb+bFMmenquxgdNtfcz+XT45nyDis89p2g9kWtF2nsUBVoXC/kWBkKAjEDcrxJ4xmC/Jal96fgzHbpOezUx6y10Ei2SaOKgYfugmYQuxmmUGQbKMgY2JVTbIjF33vfX9F4ZAU89Q7nD7n03v/UnDDLFICAAaJCggnMaEnAcgCqU3HwXrhTR02q4dhTi2nyrKGYFgvoTmkD4e86v5fIYN8yl4gmg31tIHQOsVke7xYFpijPt2Y9+Ujw/UBzjuyVhyqlFoT2qkH4NI4Qty6D5ARaiZx8oh9ngh5AAM3HWYnPsZlQFevK0U9kuCMWOY8H4wk4KsONz8ugmeQBFkVds0bfopgBdumvozzbnVOe1GeJsrhI5yIr3/P66R6pYAAkxE5mL3e/Xe3denVn/MDB4gmgMdnoI/OWkIRpSUqt7aWQ6CLluhxnyvK0dmRgCEHvw03MGjwjEdHy445HEV6U/Es8XP5aD4VuYuOaDFfPVHg3OjqIe9eHzAWEV47dMxeU2VNsWvWwBubLTBdzIbw2fviXcNYimgVmm5XIqbzW+qCP2IvwslTiZ6quULfv+his3BkAzwailYGB8Aep9xJhHNtp+sEjpGu7lJBPZHq1+PVlSDbedS3MTtCbTDN71vyB8c8=qFn9NftSmKoLoUNDW/jNv1Qjnrr08fZJYXevNgC+gUw=
