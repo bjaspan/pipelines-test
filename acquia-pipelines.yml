@@ -12,7 +12,9 @@ events:
             - export NVM_DIR="/home/local/.nvm"
             - '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
             - nvm install node
+            - node --version
       - js:
           type: script
           script:
+            - node --version
             - npm install
