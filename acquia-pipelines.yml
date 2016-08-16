@@ -10,7 +10,7 @@ events:
           type: script
           script:
             - export NVM_DIR="/home/local/.nvm"
-            - [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+            - '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
             - nvm install node
       - js:
           type: script
