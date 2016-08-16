@@ -9,6 +9,7 @@ events:
       - install_node:
           type: script
           script:
+            - set -x
             - export NVM_DIR="/home/local/.nvm"
             - '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
             - nvm install node
@@ -16,5 +17,6 @@ events:
       - js:
           type: script
           script:
+            - set -x
             - node --version
             - npm install
