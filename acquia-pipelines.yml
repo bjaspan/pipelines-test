@@ -9,8 +9,8 @@ events:
       - install_node:
           type: script
           script:
-            - cat ~/.bashrc
-            - . ~/.bashrc
+            - export NVM_DIR="/home/local/.nvm"
+            - [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
             - nvm install node
       - js:
           type: script
