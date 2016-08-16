@@ -9,6 +9,7 @@ events:
       - install_node:
           type: script
           script:
+            - . ~/.bashrc
             - nvm install node
       - js:
           type: script
