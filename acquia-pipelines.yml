@@ -11,4 +11,5 @@ events:
             - nvm install 4.4.1
             - nvm use 4.4.1
             - npm --version
+            - node --version
             - npm install
