@@ -8,5 +8,6 @@ events:
             - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
             - export NVM_DIR="/home/local/.nvm"
             - '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
-            - nvm install node
+            - nvm install 4.4.1
+            - nvm use 4.4.1
             - npm install
