@@ -11,4 +11,5 @@ events:
             - '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
             - nvm install 4.4.1
             - nvm use 4.4.1
+            - npm --version
             - npm install
