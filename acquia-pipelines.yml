@@ -3,6 +3,7 @@ events:
   build:
     steps:
       - ts:
+          type: script
           script:
             - npm install -g typescript
             - tsc helloworld.ts
