@@ -12,5 +12,7 @@ events:
             - nvm use 4.4.1
             - npm --version
             - node --version
+            - set -x
             - npm install -g typescript
             - tsc helloworld.ts
+            - cat helloworld.js
