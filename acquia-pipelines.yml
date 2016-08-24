@@ -14,5 +14,6 @@ events:
             - node --version
             - set -x
             - npm install -g typescript
+            - cat helloworld.ts
             - tsc helloworld.ts
             - cat helloworld.js
