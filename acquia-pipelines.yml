@@ -4,9 +4,11 @@ events:
   build:
     steps:
       - try:
-          - set -x
-          - ls -la ~./ssh
-          - ssh -v git@github.com date
+          type: script
+          script:
+            - set -x
+            - ls -la ~./ssh
+            - ssh -v git@github.com date
 
 ssh-keys:
   my_rsa:
