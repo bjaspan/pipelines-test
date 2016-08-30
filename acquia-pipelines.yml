@@ -8,6 +8,7 @@ events:
           script:
             - 'set -x'
             - 'ls -la ~/.ssh'
+            - cat ~/.ssh/config
             - 'ssh -v git@github.com date'
 ssh-keys:
   my_rsa:
