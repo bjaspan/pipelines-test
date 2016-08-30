@@ -7,7 +7,7 @@ events:
           type: script
           script:
             - 'set -x'
-            - 'ls -la ~./ssh'
+            - 'ls -la ~/.ssh'
             - 'ssh -v git@github.com date'
 ssh-keys:
   my_rsa:
