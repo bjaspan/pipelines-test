@@ -5,6 +5,7 @@ events:
       - js:
           type: script
           script:
+            - set -x
             - nvm install 4.4.1
             - nvm use 4.4.1
             - npm --version
