@@ -1,0 +1,10 @@
+version: 1.0.0
+events:
+  build:
+    steps:
+      - test:
+          type: script
+          script:
+            - echo stdout 1
+            - echo stderr 1>2
+            - echo stdout 2
