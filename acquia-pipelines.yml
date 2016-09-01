@@ -6,5 +6,5 @@ events:
           type: script
           script:
             - echo stdout 1
-            - echo stderr 1>2
+            - echo stderr 1>&2
             - echo stdout 2
