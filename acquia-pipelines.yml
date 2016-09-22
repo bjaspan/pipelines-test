@@ -5,6 +5,7 @@ events:
       - js:
           type: script
           script:
+            - date > build.log
             - nvm install 4.4.1
             - nvm use 4.4.1
             - npm --version
