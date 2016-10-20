@@ -24,4 +24,4 @@ events:
             - php -S 127.0.0.1:8080 &
             - sleep 2
             - cd ..
-            - ./bin/behat --tags='~preview,~javascript'
+            - ./bin/behat --tags='~@preview,~@javascript'
