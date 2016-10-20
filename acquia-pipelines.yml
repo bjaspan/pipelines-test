@@ -18,6 +18,7 @@ events:
       - test:
           type: script
           script:
+            - set -x
             - mysql -u root -proot -e "CREATE DATABASE drupal"
             - cd docroot
             - ../bin/drush site-install -y --db-url=$DB_URL
